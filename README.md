@@ -1,9 +1,10 @@
 # 🚆 Indian Railways AI-Powered Analytics & Intelligent Query Platform
 
 
-![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
-![ML](https://img.shields.io/badge/Machine_Learning-Scikit_Learn-orange)
-![Database](https://img.shields.io/badge/Database-SQLite%2FPostgreSQL-lightgrey)
+![Python](https://img.shields.io/badge/-3.11%2B-blue)
+![ML](https://img.shields.io/badge/-Scikit_Learn-orange)
+![Database](https://img.shields.io/badge/-SQLite%2FPostgreSQL-orange)
+
 
 ##  Project Overview
 An end-to-end AI platform that analyzes train movement across India, detects delay patterns, and predicts future congestion. 
@@ -28,14 +29,7 @@ The system currently ingests data from open sources, processes it into a **SQL D
 The project follows a modular Data Science architecture:
 
 ```mermaid
-graph TD
-    A[Raw Data (Kaggle/APIs)] -->|ETL Scripts| B(Cleaned Data)
-    B -->|SQLAlchemy| C[(SQLite Data Warehouse)]
-    C -->|Pandas| D{Analytics Engine}
-    D -->|Scikit-Learn| E[Delay Prediction Model]
-    D -->|Statsmodels| F[30-Day Forecaster]
-    E --> G[Model Artifacts (.pkl)]
-    F --> H[Forecast Plots]
+
 
     indian-railways-ai/
 ├── data/
