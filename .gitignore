@@ -1,0 +1,33 @@
+# Python Checkpoints
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment (NEVER Upload this)
+venv/
+env/
+.env
+
+# Data Files (Too large for GitHub)
+data/
+*.csv
+*.json
+*.xlsx
+
+# Database (Binary file, do not upload)
+*.db
+railways.db
+
+# Machine Learning Models (Large binaries)
+models/
+*.pkl
+*.h5
+*.pt
+
+# IDE Settings (VS Code / PyCharm)
+.vscode/
+.idea/
+
+# OS Metadata
+.DS_Store
+Thumbs.db
