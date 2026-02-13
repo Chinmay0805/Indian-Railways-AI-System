@@ -1,46 +1,87 @@
-# Indian Railways AI-Powered Analytics & Intelligent Query Platform
+# 🚆 Indian Railways AI-Powered Analytics & Intelligent Query Platform
 
-![Status](https://img.shields.io/badge/Status-Phase_0_Architecture-blue)
-![Tech Stack](https://img.shields.io/badge/Stack-Python_FastAPI_React_PostgreSQL-green)
 
-## 📖 Project Objective
-An end-to-end AI platform that analyzes train movement across Tier-1 cities, detects delay patterns, and allows users to query data using natural language (e.g., *"Why is the 12138 Punjab Mail delayed?"*).
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
+![ML](https://img.shields.io/badge/Machine_Learning-Scikit_Learn-orange)
+![Database](https://img.shields.io/badge/Database-SQLite%2FPostgreSQL-lightgrey)
 
-The system integrates **Traditional Machine Learning (XGBoost)** for delay prediction with **Generative AI (RAG)** for unstructured policy and rule querying.
+##  Project Overview
+An end-to-end AI platform that analyzes train movement across India, detects delay patterns, and predicts future congestion. 
+
+The system currently ingests data from open sources, processes it into a **SQL Data Warehouse**, and utilizes **Random Forest** and **Holt-Winters** algorithms to forecast delays.
+
+###  Key Features Built
+- **Data Engineering Pipeline:** - Automated ETL scripts to clean and merge raw CSV/JSON data.
+  - Transformation of 8,000+ stations and 69,000+ schedule rows.
+- **SQL Data Warehouse:** - Designed a normalized relational schema (Stations ↔ Schedules).
+  - Implemented using **SQLAlchemy** (ORM) for scalability.
+- **Predictive Modelling (Machine Learning):**
+  - **Random Forest Regressor** trained to predict train delays.
+  - **R2 Score:** *89* (Validated on unseen test data).
+- **Time-Series Forecasting:**
+  - **Holt-Winters Exponential Smoothing** to predict system-wide delays for the next 30 days.
+  - Accounts for seasonality (e.g., weekends, winter fog).
+
+---
 
 ## 🏗️ System Architecture
-The project follows a **Hybrid RAG Architecture** with a semantic router dispatching queries between a SQL Data Warehouse and a Vector Database.
-*(See `docs/architecture_diagram.png` for visual representation)*
+The project follows a modular Data Science architecture:
 
-## ❓ Business Questions Solved
-This platform answers three categories of user intents:
+```mermaid
+graph TD
+    A[Raw Data (Kaggle/APIs)] -->|ETL Scripts| B(Cleaned Data)
+    B -->|SQLAlchemy| C[(SQLite Data Warehouse)]
+    C -->|Pandas| D{Analytics Engine}
+    D -->|Scikit-Learn| E[Delay Prediction Model]
+    D -->|Statsmodels| F[30-Day Forecaster]
+    E --> G[Model Artifacts (.pkl)]
+    F --> H[Forecast Plots]
 
-**1. Analytics & Reporting (SQL)**
-- What are the top 10 busiest stations on Sunday?
-- Which route has the highest average delay during Monsoons?
-- Identify trains with >90% on-time performance.
+    indian-railways-ai/
+├── data/
+│   ├── raw/                  # Original datasets
+│   ├── processed/            # Cleaned CSVs (ETL output)
+│   └── reference_docs/       # PDFs for RAG System
+├── database/
+│   ├── models.py             # SQLAlchemy Schema
+│   └── load_data.py          # Script to populate DB
+├── scripts/
+│   ├── process_data.py       # Data Cleaning & Validation
+│   ├── generate_training.py  # Synthetic History Generator
+│   ├── train_model.py        # ML Training (Random Forest)
+│   ├── forecast_delays.py    # Time Series Forecasting
+│   └── evaluate_model.py     # Performance Report Card
+├── notebooks/                # EDA and Experiments
+├── models/                   # Saved .pkl models
+├── docs/                     # Images and Diagrams
+└── README.md                 # Project Documentation
 
-**2. Predictive Intelligence (Machine Learning)**
-- Predict the delay of Train X at Station Y given current weather Z.
-- Forecast passenger traffic volume for the upcoming Diwali season.
+```
 
-**3. Knowledge Retrieval (RAG)**
-- What are the refund rules for a Tatkal ticket cancelled 2 hours before departure?
-- Explain the dynamic pricing logic for Vande Bharat Express.
+## Roadmap & Progress
 
-## 🛠️ Tech Stack
-- **Data Engineering:** Python, Pandas, SQLAlchemy
-- **Database:** PostgreSQL (Structured), ChromaDB (Vector)
-- **AI/ML:** Scikit-Learn, XGBoost, LangChain, OpenAI/Gemini API
-- **Backend:** FastAPI, Pydantic
-- **Frontend:** React.js, TailwindCSS, Recharts
-- **DevOps:** Docker, GitHub Actions (Planned)
+ Phase 0: Architecture Design
 
-## 📂 Project Structure
-```text
-/data          -> Raw and processed datasets
-/database      -> SQL schemas and migration scripts
-/notebooks     -> Jupyter notebooks for EDA and prototyping
-/backend       -> FastAPI application and ML inference
-/frontend      -> React application
-/docs          -> Architecture diagrams and design docs
+ Phase 1-2: Data Collection & Cleaning
+
+ Phase 3: SQL Warehouse Implementation
+
+ Phase 4: Exploratory Data Analysis (EDA)
+
+ Phase 5: Feature Engineering
+
+ Phase 6: Machine Learning Model (Random Forest)
+
+ Phase 7: Time Series Forecasting
+
+ Phase 8: Model Evaluation
+
+ Phase 9: RAG System (Chat with Data) ⏳ (In Progress)
+
+ Phase 10: Dashboard (Power BI)
+
+ Phase 11: Backend API (FastAPI)
+
+ Phase 12: Frontend (React)
+
+ Phase 13: Cloud Deployment
