@@ -29,8 +29,6 @@ The system currently ingests data from open sources, processes it into a **SQL D
 The project follows a modular Data Science architecture:
 
 ```mermaid
-
-
     indian-railways-ai/
 ├── data/
 │   ├── raw/                  # Original datasets
