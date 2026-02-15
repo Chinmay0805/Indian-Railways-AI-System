@@ -1,9 +1,12 @@
 # 🚆 Indian Railways AI-Powered Analytics & Intelligent Query Platform
 
-
-![Python](https://img.shields.io/badge/-3.11%2B-blue)
-![ML](https://img.shields.io/badge/-Scikit_Learn-orange)
-![Database](https://img.shields.io/badge/-SQLite%2FPostgreSQL-orange)
+![Python](https://img.shields.io/badge/-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini_1.5_Flash-8E75B2?style=for-the-badge&logo=google&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?style=for-the-badge&logo=sqlalchemy&logoColor=white)
+![ChromaDB](https://img.shields.io/badge/Chroma-cc5500?style=for-the-badge&logo=database&logoColor=white)
 
 
 ##  Project Overview
@@ -50,30 +53,4 @@ The project follows a modular Data Science architecture:
 
 ```
 
-## Roadmap & Progress
 
- Phase 0: Architecture Design
-
- Phase 1-2: Data Collection & Cleaning
-
- Phase 3: SQL Warehouse Implementation
-
- Phase 4: Exploratory Data Analysis (EDA)
-
- Phase 5: Feature Engineering
-
- Phase 6: Machine Learning Model (Random Forest)
-
- Phase 7: Time Series Forecasting
-
- Phase 8: Model Evaluation
-
- Phase 9: RAG System (Chat with Data) ⏳ (In Progress)
-
- Phase 10: Dashboard (Power BI)
-
- Phase 11: Backend API (FastAPI)
-
- Phase 12: Frontend (React)
-
- Phase 13: Cloud Deployment
